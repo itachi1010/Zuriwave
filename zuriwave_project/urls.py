@@ -15,18 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, re_path
-from django.views.static import serve
-from django.conf import settings
+from django.urls import path
 from core import views
-import os
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    # Serve static files from original directories
-    re_path(r'^_nuxt/(?P<path>.*)$', serve, {'document_root': os.path.join(settings.BASE_DIR, 'public', '_nuxt')}),
-    re_path(r'^images/(?P<path>.*)$', serve, {'document_root': os.path.join(settings.BASE_DIR, 'public', 'images')}),
-    re_path(r'^videos/(?P<path>.*)$', serve, {'document_root': os.path.join(settings.BASE_DIR, 'public', 'videos')}),
-    re_path(r'^cdn-cgi/(?P<path>.*)$', serve, {'document_root': os.path.join(settings.BASE_DIR, 'public', 'cdn-cgi')}),
+    # Static files are now served by WhiteNoise middleware
 ]

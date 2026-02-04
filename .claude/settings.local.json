@@ -7,7 +7,11 @@
       "Bash(python manage.py:*)",
       "Bash(netstat:*)",
       "Bash(findstr:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(test:*)",
+      "Bash(ls:*)",
+      "Bash(curl:*)",
+      "Bash(chmod:*)"
     ]
   }
 }
