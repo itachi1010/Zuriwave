@@ -25,8 +25,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     # Serve static files from original directories
-    re_path(r'^_nuxt/(?P<path>.*)$', serve, {'document_root': os.path.join(settings.BASE_DIR, '_nuxt')}),
-    re_path(r'^images/(?P<path>.*)$', serve, {'document_root': os.path.join(settings.BASE_DIR, 'images')}),
-    re_path(r'^videos/(?P<path>.*)$', serve, {'document_root': os.path.join(settings.BASE_DIR, 'videos')}),
-    re_path(r'^cdn-cgi/(?P<path>.*)$', serve, {'document_root': os.path.join(settings.BASE_DIR, 'cdn-cgi')}),
+    re_path(r'^_nuxt/(?P<path>.*)$', serve, {'document_root': os.path.join(settings.BASE_DIR, 'public', '_nuxt')}),
+    re_path(r'^images/(?P<path>.*)$', serve, {'document_root': os.path.join(settings.BASE_DIR, 'public', 'images')}),
+    re_path(r'^videos/(?P<path>.*)$', serve, {'document_root': os.path.join(settings.BASE_DIR, 'public', 'videos')}),
+    re_path(r'^cdn-cgi/(?P<path>.*)$', serve, {'document_root': os.path.join(settings.BASE_DIR, 'public', 'cdn-cgi')}),
 ]

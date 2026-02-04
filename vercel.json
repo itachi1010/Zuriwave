@@ -8,7 +8,7 @@
   ],
   "functions": {
     "api/index.py": {
-      "excludeFiles": "{_nuxt/**,images/**,videos/**,cdn-cgi/**}"
+      "excludeFiles": "public/**"
     }
   }
 }
