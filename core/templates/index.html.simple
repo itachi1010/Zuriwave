@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zuriwave - Building Technology to Power African Ambition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+        @font-face {
+            font-family: 'PPMori';
+            src: url('/_nuxt/PPMori-Regular.C1Cp0C7Z.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'PPMori';
+            src: url('/_nuxt/PPMori-Semibold.BkyimhZk.woff') format('woff');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'PPMori';
+            src: url('/_nuxt/PPMori-Black.BCqa4nAv.woff') format('woff');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PPMori', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0f0802;
+            color: #e4e0da;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #000;
+            padding: 1rem 0;
+            border-bottom: 1px solid #211815;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #e4e0da;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e4e0da;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00bcd4;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #755850;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 3rem auto;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Companies Section */
+        .companies {
+            background-color: #fff;
+            color: #0f0802;
+            padding: 4rem 2rem;
+        }
+
+        .companies-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .companies h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #0f0802;
+        }
+
+        .companies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .company-card {
+            background: #f4f2f0;
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .company-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .company-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .company-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .company-desc {
+            color: #755850;
+            font-size: 0.95rem;
+        }
+
+        .learn-more {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #1a237e;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .learn-more:hover {
+            color: #00bcd4;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid #211815;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #e4e0da;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #00bcd4;
+        }
+
+        .footer-text {
+            color: #755850;
+            font-size: 0.9rem;
+        }
+
+        .email {
+            color: #e4e0da;
+            text-decoration: none;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .email:hover {
+            color: #00bcd4;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .companies-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">ZURIWAVE</a>
+            <ul class="nav-links">
+                <li><a href="#paystack">Paystack</a></li>
+                <li><a href="#paystack-mfb">Paystack MFB</a></li>
+                <li><a href="#zap">Zap</a></li>
+                <li><a href="#labs">Zuriwave Labs</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Zuriwave is building the future of African fintech</h1>
+        <p>A family of ventures building the technology to power African ambition</p>
+
+        <div class="hero-image">
+            <img src="/images/announcement.jpg" alt="Zuriwave Team">
+        </div>
+    </section>
+
+    <!-- Companies Section -->
+    <section class="companies">
+        <div class="companies-container">
+            <h2>Our Companies</h2>
+
+            <div class="companies-grid">
+                <div class="company-card">
+                    <div class="company-logo">💳</div>
+                    <h3 class="company-name">Paystack</h3>
+                    <p class="company-desc">Modern Payments for Africa</p>
+                    <p class="company-desc">Seamless payment infrastructure that empowers businesses across Africa to accept payments online and build financial products.</p>
+                    <a href="#" class="learn-more">Learn more →</a>
+                </div>
+
+                <div class="company-card">
+                    <div class="company-logo">🏦</div>
+                    <h3 class="company-name">Paystack MFB</h3>
+                    <p class="company-desc">Modern banking for Africa</p>
+                    <p class="company-desc">Next-generation microfinance bank providing accessible financial services to businesses and individuals across Africa.</p>
+                    <a href="#" class="learn-more">Learn more →</a>
+                </div>
+
+                <div class="company-card">
+                    <div class="company-logo">⚡</div>
+                    <h3 class="company-name">Zap</h3>
+                    <p class="company-desc">Consumer spending app</p>
+                    <p class="company-desc">Smart consumer financial application that helps you track spending, save money, and achieve your financial goals.</p>
+                    <a href="#" class="learn-more">Learn more →</a>
+                </div>
+
+                <div class="company-card">
+                    <div class="company-logo">🚀</div>
+                    <h3 class="company-name">Zuriwave Labs</h3>
+                    <p class="company-desc">Exploring frontier technologies</p>
+                    <p class="company-desc">Research and development hub exploring cutting-edge technologies to build the next generation of financial infrastructure.</p>
+                    <a href="#" class="learn-more">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#companies">Companies</a>
+                <a href="#careers">Careers</a>
+                <a href="#news">News</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p class="footer-text">&copy; 2026 Zuriwave. Building technology to power African ambition.</p>
+            <a href="mailto:hello@zuriwave.com" class="email">hello@zuriwave.com</a>
+        </div>
+    </footer>
+</body>
+</html>

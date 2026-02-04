@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zuriwave - Building Technology to Power African Ambition</title>
+    <style>
+        @font-face {
+            font-family: 'PPMori';
+            src: url('/_nuxt/PPMori-Extralight.BhkGJ8B3.woff') format('woff');
+            font-weight: 200;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'PPMori';
+            src: url('/_nuxt/PPMori-Regular.C1Cp0C7Z.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'PPMori';
+            src: url('/_nuxt/PPMori-Semibold.BkyimhZk.woff') format('woff');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'PPMori';
+            src: url('/_nuxt/PPMori-Black.BCqa4nAv.woff') format('woff');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-background: #f4f2f0;
+            --color-foreground: #0f0802;
+            --color-card: #e4e0da;
+            --color-border: #d4d0ca;
+            --color-muted-foreground: #755850;
+        }
+
+        body {
+            font-family: 'PPMori', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-foreground);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* Header with Logo */
+        .header {
+            background-color: #000;
+            padding: 2rem;
+        }
+
+        .logo-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+        }
+
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: #fff;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 3rem;
+            max-width: 900px;
+        }
+
+        /* Read Announcement Link */
+        .announcement-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-foreground);
+            text-decoration: none;
+            margin-bottom: 3rem;
+            font-weight: 400;
+            transition: opacity 0.3s;
+        }
+
+        .announcement-link:hover {
+            opacity: 0.7;
+        }
+
+        .announcement-link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Hero Image/Video */
+        .hero-media {
+            width: 100%;
+            margin: 3rem 0;
+            border-radius: 0;
+        }
+
+        .hero-media img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Tab Navigation */
+        .tabs-nav {
+            border-bottom: 1px solid var(--color-border);
+            margin-bottom: 3rem;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .tabs-list {
+            display: flex;
+            list-style: none;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            gap: 3rem;
+        }
+
+        .tab-item {
+            padding: 1rem 0;
+            cursor: pointer;
+            white-space: nowrap;
+            font-weight: 400;
+            color: var(--color-muted-foreground);
+            border-bottom: 2px solid transparent;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .tab-item:hover {
+            color: var(--color-foreground);
+        }
+
+        .tab-item.active {
+            color: var(--color-foreground);
+            border-bottom-color: var(--color-foreground);
+            font-weight: 600;
+        }
+
+        /* Company Section */
+        .company-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            min-height: 60vh;
+        }
+
+        .company-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        @media (min-width: 768px) {
+            .company-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 6rem;
+                align-items: start;
+            }
+        }
+
+        .company-logo-section {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .company-logo-large {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .company-logo-large svg,
+        .company-logo-large img {
+            width: 100%;
+            height: auto;
+        }
+
+        .company-tagline {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--color-foreground);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .company-tagline:hover {
+            opacity: 0.7;
+        }
+
+        .company-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .company-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--color-muted-foreground);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #000;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 6rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-email {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 400;
+            transition: opacity 0.3s;
+        }
+
+        .footer-email:hover {
+            opacity: 0.7;
+        }
+
+        /* Hide/Show tab content */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* SVG Logo Styles */
+        .zuriwave-logo-svg {
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 125 53" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M55.443 0v10.127H35.88a9.2 9.2 0 0 0-6.517 2.71l-8.747 8.779a9.2 9.2 0 0 1-6.517 2.71H0V14.204h21.404a4.62 4.62 0 0 0 3.261-1.353l2.71-2.72H0V0z"/>
+                        <path d="M55.443 14.2v10.122H35.825a9.2 9.2 0 0 0-6.518 2.71l-8.746 8.779a9.2 9.2 0 0 1-6.518 2.71H0V28.394h19.435a9.2 9.2 0 0 0 6.517-2.71l8.746-8.78a9.2 9.2 0 0 1 6.518-2.71h14.227z"/>
+                        <path d="m30.599 39.878-2.71 2.72h27.554v10.127H0V42.598h19.378a9.2 9.2 0 0 0 6.517-2.71l8.747-8.78a9.2 9.2 0 0 1 6.517-2.71h14.284v10.127H33.855a4.62 4.62 0 0 0-3.261 1.353z"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Zuriwave</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title">Zuriwave is building the future of African fintech, and a family of ventures building the technology to power African ambition.</h1>
+
+        <a href="#announcement" class="announcement-link">
+            Read the announcement
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+        </a>
+
+        <div class="hero-media">
+            <img src="/images/announcement.jpg" alt="Zuriwave Leadership">
+        </div>
+    </section>
+
+    <!-- Tab Navigation -->
+    <nav class="tabs-nav">
+        <ul class="tabs-list">
+            <li class="tab-item active" data-tab="paystack">Paystack</li>
+            <li class="tab-item" data-tab="paystack-mfb">Paystack MFB</li>
+            <li class="tab-item" data-tab="zap">Zap</li>
+            <li class="tab-item" data-tab="zuriwave-labs">Zuriwave Labs</li>
+        </ul>
+    </nav>
+
+    <!-- Tab Content: Paystack -->
+    <div id="paystack" class="tab-content active">
+        <section class="company-section">
+            <div class="company-grid">
+                <div class="company-logo-section">
+                    <div class="company-logo-large">
+                        <svg viewBox="0 0 182 33" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" d="M25.574 17.007H1.502c-.83 0-1.502.672-1.502 1.502v2.688c0 .83.672 1.502 1.502 1.502h24.072c.83 0 1.502-.673 1.502-1.502v-2.688c0-.83-.673-1.502-1.502-1.502M27.079 9.535H1.502c-.83 0-1.502.673-1.502 1.502v2.688c0 .83.672 1.502 1.502 1.502h25.577c.83 0 1.502-.672 1.502-1.501v-2.689c0-.83-.673-1.502-1.502-1.502M25.574 2.064H1.502C.672 2.064 0 2.736 0 3.566v2.688c0 .83.672 1.502 1.502 1.502h24.072c.83 0 1.502-.672 1.502-1.502V3.566c0-.83-.673-1.502-1.502-1.502M15.07 24.476H1.502c-.83 0-1.502.673-1.502 1.502v2.689c0 .83.672 1.502 1.502 1.502H15.07c.83 0 1.502-.673 1.502-1.502v-2.689c0-.83-.673-1.502-1.502-1.502"/>
+                        </svg>
+                    </div>
+                    <a href="#" class="company-tagline">
+                        Modern Payments for Africa
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="company-details">
+                    <p class="company-description">
+                        Paystack helps businesses in Africa get paid by anyone, anywhere in the world. With Paystack, merchants can start accepting payments in minutes and build financial products for their users.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Tab Content: Paystack MFB -->
+    <div id="paystack-mfb" class="tab-content">
+        <section class="company-section">
+            <div class="company-grid">
+                <div class="company-logo-section">
+                    <div class="company-logo-large">
+                        <svg viewBox="0 0 210 50" xmlns="http://www.w3.org/2000/svg">
+                            <text x="10" y="35" font-family="PPMori, sans-serif" font-size="24" font-weight="600" fill="currentColor">paystack</text>
+                            <text x="10" y="48" font-family="PPMori, sans-serif" font-size="10" fill="currentColor">MICROFINANCE BANK</text>
+                        </svg>
+                    </div>
+                    <a href="#" class="company-tagline">
+                        Modern banking for Africa
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="company-details">
+                    <p class="company-description">
+                        Paystack Microfinance Bank (MFB) provides banking services designed for the modern African consumer. Licensed by the Central Bank of Nigeria, we offer accessible financial services to businesses and individuals.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Tab Content: Zap -->
+    <div id="zap" class="tab-content">
+        <section class="company-section">
+            <div class="company-grid">
+                <div class="company-logo-section">
+                    <div class="company-logo-large">
+                        <svg viewBox="0 0 93 39" xmlns="http://www.w3.org/2000/svg">
+                            <text x="5" y="30" font-family="PPMori, sans-serif" font-size="32" font-weight="900" font-style="italic" fill="currentColor">zap</text>
+                        </svg>
+                    </div>
+                    <a href="#" class="company-tagline">
+                        Consumer spending app
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="company-details">
+                    <p class="company-description">
+                        Zap is a consumer spending app that helps you track your spending, save money, and achieve your financial goals with smart insights and automated tools.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Tab Content: Zuriwave Labs -->
+    <div id="zuriwave-labs" class="tab-content">
+        <section class="company-section">
+            <div class="company-grid">
+                <div class="company-logo-section">
+                    <div class="company-logo-large">
+                        <svg viewBox="0 0 125 53" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" d="M55.443 0v10.127H35.88a9.2 9.2 0 0 0-6.517 2.71l-8.747 8.779a9.2 9.2 0 0 1-6.517 2.71H0V14.204h21.404a4.62 4.62 0 0 0 3.261-1.353l2.71-2.72H0V0z"/>
+                            <path fill="currentColor" d="M55.443 14.2v10.122H35.825a9.2 9.2 0 0 0-6.518 2.71l-8.746 8.779a9.2 9.2 0 0 1-6.518 2.71H0V28.394h19.435a9.2 9.2 0 0 0 6.517-2.71l8.746-8.78a9.2 9.2 0 0 1 6.518-2.71h14.227z"/>
+                            <path fill="currentColor" d="m30.599 39.878-2.71 2.72h27.554v10.127H0V42.598h19.378a9.2 9.2 0 0 0 6.517-2.71l8.747-8.78a9.2 9.2 0 0 1 6.517-2.71h14.284v10.127H33.855a4.62 4.62 0 0 0-3.261 1.353z"/>
+                            <text x="65" y="35" font-family="PPMori, sans-serif" font-size="14" font-weight="600" fill="currentColor">LABS</text>
+                        </svg>
+                    </div>
+                    <a href="#" class="company-tagline">
+                        Exploring frontier technologies
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="company-details">
+                    <p class="company-description">
+                        Zuriwave Labs is our research and development hub, exploring cutting-edge technologies and building experimental products that push the boundaries of financial services in Africa.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="mailto:hello@zuriwave.com" class="footer-email">hello@zuriwave.com</a>
+        </div>
+    </footer>
+
+    <!-- Tab Switching Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab-item');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-tab');
+
+                    // Remove active class from all tabs and contents
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.classList.remove('active'));
+
+                    // Add active class to clicked tab and corresponding content
+                    this.classList.add('active');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

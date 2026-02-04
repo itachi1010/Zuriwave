@@ -1,0 +1,1 @@
+import{_ as t}from"./DlAUqK2U.js";import{y as o,z as r,Z as s}from"./CvpO30Rr.js";const a={},c={class:"relative"};function n(e,_){return r(),o("div",c,[s(e.$slots,"default")])}const d=t(a,[["render",n]]);export{d as default};
